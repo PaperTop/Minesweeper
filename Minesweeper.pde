@@ -63,7 +63,6 @@ public void displayLosingMessage()
 }
 public void displayWinningMessage()
 {
-    //your code here
     buttons[8][7].setLabel("W");
     buttons[9][7].setLabel("I");
     buttons[9][8].setLabel("N");
@@ -125,13 +124,14 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
-        //your code here
         if (mouseButton == RIGHT){
           if (isFlagged()){
             flagged = false;
+            clicked = false;
           } 
           else {
-          flagged = true;
+            flagged = true;
+            clicked = false;
           }
         }
         else if (mines.contains(this)){
